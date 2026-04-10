@@ -1,5 +1,5 @@
 {
-  "project_name": "f.e. Events, Music Room, Sports",
+  "project_name": "e.g. Events, Music Room, Sports",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
   "database": [
     "mongo",
@@ -16,5 +16,16 @@
   ],
   "__include_mongo": "{{cookiecutter.database == 'mongo' }}",
   "__include_innohassle_accounts": "{{cookiecutter.innohassle_accounts }}",
-  "__include_login_and_password": "{{cookiecutter.login_and_password }}"
+  "__include_login_and_password": "{{cookiecutter.login_and_password }}",
+  "__prompts__": {
+    "project_name": "Capitalized Display Name",
+    "project_slug": "Project slug",
+    "database": {
+      "__prompt__": "Persistence backend",
+      "mongo": "MongoDB (recommended)"
+    },
+    "innohassle_accounts": "InnoHassle SSO / service token",
+    "session": "Cookie session middleware",
+    "login_and_password": "Email+password auth (user module)"
+  }
 }
